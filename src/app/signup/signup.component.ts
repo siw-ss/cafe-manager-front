@@ -39,9 +39,9 @@ export class SignupComponent implements OnInit {
   }
 
   validateSubmit(){
-    if(this.signupForm.controls['password'].value != this.signupForm.controls['confirmPassword'].value)
-    return true;
-    else return false;
+    if(this.signupForm.controls['password'].value != this.signupForm.controls['confirmpassword'].value)
+    {return true;}
+    else {return false;}
   }
 
   handleSubmit(){
@@ -64,9 +64,9 @@ export class SignupComponent implements OnInit {
       this.ngxService.stop();
       if (error.error?.messag) {
         this.responseMessage = error.error?.messag;
-      }else
-      this.responseMessage = GlobalConstants.genericError;
-
+      }else{
+        this.responseMessage = GlobalConstants.genericError;
+      }
     this.snackbarService.openSnackBar(this.responseMessage,GlobalConstants.error);
     })
   }
