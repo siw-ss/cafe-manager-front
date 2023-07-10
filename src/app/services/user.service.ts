@@ -23,4 +23,10 @@ constructor(private HttpClient:HttpClient) { }
         headers:new HttpHeaders().set('Content-Type','application/json')
       })
   }
+  login(data:any){
+    return this.HttpClient.post(this.url+
+      "/user/login",data,{
+        headers:new HttpHeaders().set('Content-Type','application/json')
+      })
+  }
 }
